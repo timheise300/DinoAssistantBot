@@ -21,8 +21,9 @@ def receive_message():
     else:
         # get whatever message a user sent the bot
        output = request.get_json()
-       for key, value in output.items():
-          messaging = output['entry']['messaging']
+       print(output)
+       for event in output['entry']:
+          messaging = event['messaging']
           for message in messaging:
             if message.get('message'):
                 #Facebook Messenger ID for user so we know where to send response back to
