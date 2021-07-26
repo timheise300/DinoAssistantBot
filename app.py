@@ -21,8 +21,7 @@ def receive_message():
     else:
         # get whatever message a user sent the bot
        output = request.get_json()
-       output = list(output)
-       for event in output['entry'][0]:
+       for event in output[0]:
           messaging = event['messaging']
           for message in messaging:
             if message.get('message'):
