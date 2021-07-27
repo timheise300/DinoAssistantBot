@@ -13,7 +13,7 @@ def hatch_dino(message):
 
 def randomize_color():
     regionRoll = random.randrange(0,5)
-    colorRoll = random.randrange(1,226)
+    colorRoll = random.choice([random.randint(1, 100), random.randint(200, 226)])
     response = "Region " + str(regionRoll) + ", color " + str(colorRoll)
     return response
 
