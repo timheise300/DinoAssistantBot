@@ -1,7 +1,7 @@
 #Python libraries that we need to import for our bot
 import random
 import os
-import responseutils
+import responseutils as response
 from flask import Flask, request
 from pymessenger.bot import Bot
 
@@ -43,9 +43,9 @@ def verify_fb_token(token_sent):
 
 def get_message(message):
     if "!hatch" in message:
-        return responseutils.hatch_dino(message)
+        return response.hatch_dino(message)
     elif "!color" in message:
-        return responseutils.randomize_color()
+        return response.randomize_color()
 
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
